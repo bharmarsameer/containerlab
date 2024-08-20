@@ -90,7 +90,7 @@ for each in ips:
     except socket.herror:
         pass
 
-host =''
+host ='x.x.x.x'
 port = '22'
 username= ''
 password = ''
