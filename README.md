@@ -45,3 +45,12 @@ there are multiple ways to get the L3 interfaces. Another way if your environmen
 3. Next step is to create a yaml file to build a blueprint of the containerlab toppology. the getyanlgetall.py creates this using eos-test-sb.clab.j2 jinja file which gets the json files created in step2 and also gets the switch configs from the step1 and builds the yaml file. This yaml file tells containerlab to boot the switch container with the interface mapping and the switch configurations.
 4. Once we get the yaml file, in order to build the virtual lab, we can use below command to bring the lab up.
 _containerlab deploy -t eos-test-sb.clab.yml_
+
+Things to note:
+
+* On the machine hosting containerlab, make sure
+```
+sysctl net.ipv4.ip_forward
+net.ipv4.ip_forward = 1
+```
+* When using arista cEOS, if you switch is running pvst and there are too many vlans the trunk interfaces won't come up. Use mstp to avoid this
