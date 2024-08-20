@@ -4,7 +4,7 @@ This project is to build a network virtual lab similar to the production infrast
 
 Prerequisites:
 
-* If you have 100s of switches in the infrastructure, you will need a powerful machine to run this environment. The one that we are using in our infrstructure is with the below specs. 
+* If you have 100s of switches in the infrastructure, you will need a powerful machine to run this environment. We are running around 210 containers in our environment. The machine that we are using in our infrstructure is with the below specs. 
 
 ```lscpu
 Architecture:        x86_64
