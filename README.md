@@ -1,5 +1,40 @@
 # containerlab
 
+This project is to build a network virtual lab similar to the production infrastructure using containerlab. 
+
+Prerequisites:
+
+* If you have 100s of switches in the infrastructure, you will need a powerful machine to run this environment. The one that we are using in our infrstructure is with the below specs. 
+
+lscpu
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              256
+On-line CPU(s) list: 0-255
+Thread(s) per core:  1
+Core(s) per socket:  128
+Socket(s):           2
+NUMA node(s):        2
+Vendor ID:           AuthenticAMD
+CPU family:          25
+Model:               160
+Model name:          AMD EPYC 9754 128-Core Processor
+Stepping:            2
+CPU MHz:             3100.099
+CPU max MHz:         3100.3411
+CPU min MHz:         1500.0000
+BogoMIPS:            4500.20
+Virtualization:      AMD-V
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            1024K
+L3 cache:            16384K
+NUMA node0 CPU(s):   0-127
+NUMA node1 CPU(s):   128-255
+
+* Also remember you need to have ipv6 enabled on the kernel in order to run Arists cEOS or else you wont be able to have the interfaces up in the virtual lab.
+
 Steps to build the lab:
 
 1. Get all switch configs using getallswitches.py and getotherswitches.py. getallswitches gets all the core switches from the environment and getotherswitches gets the other L2 switches which are not cores but has the L3 ciruits terminated on them
