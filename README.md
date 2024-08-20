@@ -48,11 +48,12 @@ _containerlab deploy -t eos-test-sb.clab.yml_
 
 Things to note:
 
-* On the machine hosting containerlab, make sure
+* On the machine hosting containerlab if you want to communicate from outside the containerlab machine;s subnet, make sure
 ```
 sysctl net.ipv4.ip_forward
 net.ipv4.ip_forward = 1
 ```
+
 * When using arista cEOS, if you switch is running pvst and there are too many vlans the trunk interfaces won't come up. Use mstp to avoid this
 
 steps:
