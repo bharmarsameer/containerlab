@@ -51,7 +51,7 @@ def main():
         if (each['circuit_type'] == 'TELCO' or each['circuit_type'] == 'INTRA_DC') and each['status'] == 'production':
             TID.append(each['tid'])
     for each_tid in TID:
-        uri = "https://portal.tower-research.com/portal/api/v1/netdb/tid/?username=netops-api&api_key=2127c497de605b24253cfc7ffd02f5524f85cf33&alias__contains=TID%s&is_active=true&device__status=1" % (each_tid)
+        uri = "https://portal.tower-research.com/portal/api/v1/netdb/tid/?username=netops-api&api_key=xxxxx&alias__contains=TID%s&is_active=true&device__status=1" % (each_tid)
         apioutput = getJSONapi(uri)
         #print(apioutput)
         count = 0
