@@ -6,7 +6,7 @@ Prerequisites:
 
 * If you have 100s of switches in the infrastructure, you will need a powerful machine to run this environment. The one that we are using in our infrstructure is with the below specs. 
 
-lscpu
+```lscpu
 Architecture:        x86_64
 CPU op-mode(s):      32-bit, 64-bit
 Byte Order:          Little Endian
@@ -32,7 +32,7 @@ L2 cache:            1024K
 L3 cache:            16384K
 NUMA node0 CPU(s):   0-127
 NUMA node1 CPU(s):   128-255
-
+```
 * Also remember you need to have ipv6 enabled on the kernel in order to run Arists cEOS or else you wont be able to have the interfaces up in the virtual lab.
 
 Steps to build the lab:
