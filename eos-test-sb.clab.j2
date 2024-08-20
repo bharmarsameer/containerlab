@@ -1,0 +1,22 @@
+name: cicd-lab
+mgmt:
+  network: fixedips
+  ipv4_subnet: 172.20.24.0/24
+  ipv6_subnet: 2001:dead:beef:babe:face::/80
+topology:
+  kinds:
+    ceos:
+  nodes:
+    {% for e in res %}
+      {{ e['switch_name'] }}:
+        kind: ceos
+        image: ceos:4.30.5.M
+        startup-delay: {{ 300 * ((loop.index - 1) // 30) }}
+        binds:
+          - {{ e['switch_name'] }}.txt.json:/mnt/flash/EosIntfMapping.json:ro
+        startup-config: snapshot/configs/all_configs/{{ e['site'] }}/{{ e['switch'] }}-confg
+    {%- endfor %}
+  links:
+    {% for each in newdict: %}
+      - endpoints: {{ each }}
+    {%- endfor %}
