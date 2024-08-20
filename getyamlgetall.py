@@ -31,7 +31,7 @@ def getJSONapi(uri):
 
 
 def main():
-    host ='10.30.20.21'
+    host ='x.x.x.x'
     port = '22'
     username= ''
     password = ''
