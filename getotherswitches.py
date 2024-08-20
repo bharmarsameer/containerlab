@@ -5,7 +5,7 @@ import subprocess
 import paramiko
 import portal3 
 
-api = portal3.PortalAPI(api_user="netops-api", api_key="2127c497de605b24253cfc7ffd02f5524f85cf33")
+api = portal3.PortalAPI(api_user="netops-api", api_key="")
 
 otherswitches = []
 

@@ -5,7 +5,7 @@ import subprocess
 import paramiko
 import portal3 
 
-x = portal3.PortalAPI(api_user="netops-api", api_key="2127c497de605b24253cfc7ffd02f5524f85cf33")
+x = portal3.PortalAPI(api_user="netops-api", api_key="")
 
 coreswitches = []
 for each in x.sitedb_production_sites({'type__in': '1,2,3,5'}):
