@@ -1,4 +1,4 @@
-# Build a virtual network using containerlab
+# Build a virtual network similar to a production network topology using containerlab
 
 This project is to build a network virtual lab similar to the production infrastructure using containerlab https://containerlab.dev/. 
 
