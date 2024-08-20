@@ -46,7 +46,7 @@ for each in ips:
     except socket.herror:
         pass
 
-host ='10.30.20.21'
+host ='x.x.x.x'
 port = '22'
 username= ''
 password = ''
@@ -87,6 +87,4 @@ for each in ips:
         pass
     except socket.herror:
         pass
-#switches = ['7260cx3-r1-1', '7260cx3-r1-2']
-#sites = ['ny4', 'ny5']
 
