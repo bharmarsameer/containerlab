@@ -57,6 +57,7 @@ net.ipv4.ip_forward = 1
 * When using arista cEOS, if you switch is running pvst and there are too many vlans the trunk interfaces won't come up. Use mstp to avoid this
 
 steps:
+```
 sudo setcap cap_net_raw+ep $(readlink -f $(which python))
 python getallswitches.py
 python getotherswitches.py
@@ -64,5 +65,5 @@ python get_interface_mappings_final.py
 python getyamlgetall.py
 sed '/^interface Vlan800/{N;N;s/$/\n   no switchport/}' -i */*
 find ./ -type f -exec sed -i -e 's/Vlan800/Et72/g' {} \;
-
+```
 
