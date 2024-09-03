@@ -11,12 +11,15 @@ topology:
       {{ e['switch_name'] }}:
         kind: ceos
         image: ceos:4.30.5.M
+        ports:
+          - {{ 2000 + loop.index }}:22/tcp  # Generate a unique port for each node
         startup-delay: {{ 300 * ((loop.index - 1) // 30) }}
         binds:
           - {{ e['switch_name'] }}.txt.json:/mnt/flash/EosIntfMapping.json:ro
         startup-config: snapshot/configs/all_configs/{{ e['site'] }}/{{ e['switch'] }}-confg
     {%- endfor %}
   links:
-    {% for each in newdict: %}
+    {% for each in newdict %}
       - endpoints: {{ each }}
     {%- endfor %}
+
